@@ -78,5 +78,14 @@ public class QuantityAnalyzerTests
       Boolean compareCheck = feet1.compare(inch1);
       Assert.assertTrue(compareCheck);
    }
+
+   @Test
+   public void  givenOneInchAndOneFeet_WhenCompered_ShouldReturnEqualLength()
+   {
+      Length inch1 = new Length(1.0, Length.Unit.INCH);
+      Length feet1 = new Length(1.0, Length.Unit.FEET);
+      Boolean compareCheck = inch1.compare(feet1);
+      Assert.assertTrue(compareCheck);
+   }
 }
 
