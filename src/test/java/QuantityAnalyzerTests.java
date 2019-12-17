@@ -46,46 +46,113 @@ public class QuantityAnalyzerTests
    @Test
    public void comparingZeroInchAndZeroFeet_ShouldReturnEqualLength()
    {
-      Length inch1 = new Length(0.0, Length.Unit.FEET);
-      Length feet1 = new Length(0.0, Length.Unit.INCH);
-      Boolean compareCheck = feet1.compare(inch1);
-      Assert.assertTrue(compareCheck);
+      try
+      {
+         Length inch1 = new Length(0.0, Length.Unit.FEET);
+         Length feet1 = new Length(0.0, Length.Unit.INCH);
+         Boolean compareCheck = feet1.compare(inch1);
+         Assert.assertTrue(compareCheck);
+      }
+      catch (QuantityMeasurementException e)
+      {
+         Assert.assertEquals(e.exceptionType, QuantityMeasurementException.ExceptionType.NULL_OBJECT);
+      }
    }
 
    @Test
    public void comparingZeroInchAnd1Feet_ShouldReturnNotEqualLength()
    {
-      Length inch1 = new Length(0.0, Length.Unit.FEET);
-      Length feet1 = new Length(1.0, Length.Unit.INCH);
-      Boolean compareCheck = feet1.compare(inch1);
-      Assert.assertFalse(compareCheck);
+      try
+      {
+         Length inch1 = new Length(0.0, Length.Unit.FEET);
+         Length feet1 = new Length(1.0, Length.Unit.INCH);
+         Boolean compareCheck = inch1.compare(feet1);
+         Assert.assertFalse(compareCheck);
+      }
+      catch (QuantityMeasurementException e)
+      {
+         Assert.assertEquals(e.exceptionType, QuantityMeasurementException.ExceptionType.NULL_OBJECT);
+      }
    }
 
    @Test
-   public void  givenOneFeetAndOneFeet_WhenCompered_ShouldReturnEqualLength()
+   public void givenOneFeetAndOneFeet_WhenCompered_ShouldReturnEqualLength()
    {
-      Length inch1 = new Length(1.0, Length.Unit.FEET);
-      Length feet1 = new Length(1.0, Length.Unit.FEET);
-      Boolean compareCheck = feet1.compare(inch1);
-      Assert.assertTrue(compareCheck);
+      try
+      {
+         Length inch1 = new Length(1.0, Length.Unit.FEET);
+         Length feet1 = new Length(1.0, Length.Unit.FEET);
+         Boolean compareCheck = feet1.compare(inch1);
+         Assert.assertTrue(compareCheck);
+      }
+      catch (QuantityMeasurementException e)
+      {
+         Assert.assertEquals(e.exceptionType, QuantityMeasurementException.ExceptionType.NULL_OBJECT);
+      }
    }
 
    @Test
-   public void  givenOneInchAndOneInch_WhenCompered_ShouldReturnEqualLength()
+   public void givenOneInchAndOneInch_WhenCompered_ShouldReturnEqualLength()
    {
-      Length inch1 = new Length(1.0, Length.Unit.INCH);
-      Length feet1 = new Length(1.0, Length.Unit.INCH);
-      Boolean compareCheck = feet1.compare(inch1);
-      Assert.assertTrue(compareCheck);
+      try
+      {
+         Length inch1 = new Length(1.0, Length.Unit.INCH);
+         Length feet1 = new Length(1.0, Length.Unit.INCH);
+         Boolean compareCheck = feet1.compare(inch1);
+         Assert.assertTrue(compareCheck);
+      }
+      catch (QuantityMeasurementException e)
+      {
+         Assert.assertEquals(e.exceptionType, QuantityMeasurementException.ExceptionType.NULL_OBJECT);
+      }
    }
 
    @Test
-   public void  givenOneInchAndOneFeet_WhenCompered_ShouldReturnEqualLength()
+   public void givenOneInchAndOneFeet_WhenCompered_ShouldReturnNotEqualLength()
    {
-      Length inch1 = new Length(1.0, Length.Unit.INCH);
-      Length feet1 = new Length(1.0, Length.Unit.FEET);
-      Boolean compareCheck = inch1.compare(feet1);
-      Assert.assertTrue(compareCheck);
+      try
+      {
+         Length inch1 = new Length(1.0, Length.Unit.INCH);
+         Length feet1 = new Length(1.0, Length.Unit.FEET);
+         Boolean compareCheck = inch1.compare(feet1);
+         Assert.assertFalse(compareCheck);
+      }
+      catch (QuantityMeasurementException e)
+      {
+         Assert.assertEquals(e.exceptionType, QuantityMeasurementException.ExceptionType.NULL_OBJECT);
+      }
    }
+
+   @Test
+   public void givenOneInchAndOneInch_WhenCompered_ShouldReturnFalse()
+   {
+      try
+      {
+         Length inch1 = new Length(1.0, Length.Unit.INCH);
+         Length feet1 = new Length(1.0, Length.Unit.INCH);
+         Boolean compareCheck = feet1.compare(inch1);
+         Assert.assertTrue(compareCheck);
+      }
+      catch (QuantityMeasurementException e)
+      {
+         Assert.assertEquals(e.exceptionType, QuantityMeasurementException.ExceptionType.NULL_OBJECT);
+      }
+   }
+
+   @Test
+   public void givenOneInch_WhenComperedWithNull_ShouldThrowException()
+   {
+      try
+      {
+         Length inch1 = new Length(1.0, Length.Unit.INCH);
+         Boolean compareCheck = inch1.compare(null);
+         Assert.assertTrue(compareCheck);
+      }
+      catch (QuantityMeasurementException e)
+      {
+         Assert.assertEquals(e.exceptionType, QuantityMeasurementException.ExceptionType.NULL_OBJECT);
+      }
+   }
+
 }
 

@@ -17,16 +17,25 @@ public class Length
       this.value = value;
    }
 
-   public boolean compare(Length that)
+   public boolean compare(Length that) throws QuantityMeasurementException
    {
-      if (this.unit.equals(Unit.FEET) && that.unit.equals(Unit.INCH))
-         return Double.compare(this.value * FEET_TO_INCH, that.value) == 0;
-     else if (this.unit.equals(Unit.FEET) && that.unit.equals(Unit.FEET))
-         return Double.compare(this.value, that.value) == 0;
-      else if (this.unit.equals(Unit.INCH) && that.unit.equals(Unit.INCH))
-         return Double.compare(this.value, that.value) == 0;
+      try
+      {
+         if (this.unit.equals(Unit.FEET) && that.unit.equals(Unit.INCH))
+            return Double.compare(this.value * FEET_TO_INCH, that.value) == 0;
+         else if (this.unit.equals(Unit.FEET) && that.unit.equals(Unit.FEET))
+            return Double.compare(this.value, that.value) == 0;
+         else if (this.unit.equals(Unit.INCH) && that.unit.equals(Unit.INCH))
+            return Double.compare(this.value, that.value) == 0;
+         else if (this.unit.equals(Unit.INCH) && that.unit.equals(Unit.FEET))
+            return Double.compare(this.value, that.value*FEET_TO_INCH) == 0;
+
+      }
+      catch (NullPointerException e){
+         throw new QuantityMeasurementException("Null value found",QuantityMeasurementException.ExceptionType.NULL_OBJECT);
+      }
       return false;
-   }
+}
 
    @Override
    public boolean equals(Object o)

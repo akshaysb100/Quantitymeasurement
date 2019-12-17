@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="QuantityAnalyzerTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-12-17T11:18:47" hostname="admin1-desktop" time="0.002">
+<testsuite name="QuantityAnalyzerTests" tests="12" skipped="0" failures="0" errors="0" timestamp="2019-12-17T11:58:11" hostname="admin1-desktop" time="0.005">
   <properties/>
   <testcase name="givenOneFeetAndOneFeet_WhenCompered_ShouldReturnEqualLength" classname="QuantityAnalyzerTests" time="0.002"/>
+  <testcase name="givenZeroInchAndAnotherOneInch_ShouldReturnNotEqual" classname="QuantityAnalyzerTests" time="0.0"/>
+  <testcase name="givenOneFeetAndAnotherFeet_ShouldReturnNotEqual" classname="QuantityAnalyzerTests" time="0.0"/>
+  <testcase name="givenOneInchAndOneFeet_WhenCompered_ShouldReturnNotEqualLength" classname="QuantityAnalyzerTests" time="0.0"/>
+  <testcase name="givenOneInchAndOneInch_WhenCompered_ShouldReturnEqualLength" classname="QuantityAnalyzerTests" time="0.0"/>
+  <testcase name="forOneFeetAndAnotherOneFeet_ShouldReturnEqual" classname="QuantityAnalyzerTests" time="0.0"/>
+  <testcase name="givenOneInch_WhenComperedWithNull_ShouldThrowException" classname="QuantityAnalyzerTests" time="0.001"/>
+  <testcase name="comparingZeroInchAndZeroFeet_ShouldReturnEqualLength" classname="QuantityAnalyzerTests" time="0.0"/>
+  <testcase name="givenOneFeetAndOneInch_ShouldReturnNotEqual" classname="QuantityAnalyzerTests" time="0.0"/>
+  <testcase name="comparingZeroInchAnd1Feet_ShouldReturnNotEqualLength" classname="QuantityAnalyzerTests" time="0.0"/>
+  <testcase name="givenOneInchAndAnotherOneInch_ShouldReturnEqual" classname="QuantityAnalyzerTests" time="0.0"/>
+  <testcase name="givenOneInchAndOneInch_WhenCompered_ShouldReturnFalse" classname="QuantityAnalyzerTests" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
