@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="QuantityAnalyzerTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2019-12-17T08:37:54" hostname="admin1-desktop" time="0.004">
+<testsuite name="QuantityAnalyzerTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-12-17T11:18:47" hostname="admin1-desktop" time="0.002">
   <properties/>
-  <testcase name="givenZeroInchAndAnotherOneInch_ShouldReturnNotEqual" classname="QuantityAnalyzerTests" time="0.002"/>
-  <testcase name="givenOneFeetAndAnotherFeet_ShouldReturnNotEqual" classname="QuantityAnalyzerTests" time="0.0"/>
-  <testcase name="forOneFeetAndAnotherOneFeet_ShouldReturnEqual" classname="QuantityAnalyzerTests" time="0.0"/>
-  <testcase name="givenOneFeetAndOneInch_ShouldReturnNotEqual" classname="QuantityAnalyzerTests" time="0.0"/>
-  <testcase name="givenOneInchAndAnotherOneInch_ShouldReturnEqual" classname="QuantityAnalyzerTests" time="0.0"/>
+  <testcase name="givenOneFeetAndOneFeet_WhenCompered_ShouldReturnEqualLength" classname="QuantityAnalyzerTests" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
