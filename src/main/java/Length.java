@@ -1,17 +1,16 @@
-import java.util.Objects;
 
 public class Length
 {
    private static final double FEET_TO_INCH = 12.0;
    private final double value;
-   private final Unit unit;
+   private final UnitConversion.Length unit;
 
    public enum Unit
    {
       FEET, INCH;
    }
 
-   public Length(double value, Unit unit)
+   public Length(double value, UnitConversion.Length unit)
    {
       this.unit = unit;
       this.value = value;
@@ -19,23 +18,19 @@ public class Length
 
    public boolean compare(Length that) throws QuantityMeasurementException
    {
+      boolean comparisionResult = false;
       try
       {
-         if (this.unit.equals(Unit.FEET) && that.unit.equals(Unit.INCH))
-            return Double.compare(this.value * FEET_TO_INCH, that.value) == 0;
-         else if (this.unit.equals(Unit.FEET) && that.unit.equals(Unit.FEET))
-            return Double.compare(this.value, that.value) == 0;
-         else if (this.unit.equals(Unit.INCH) && that.unit.equals(Unit.INCH))
-            return Double.compare(this.value, that.value) == 0;
-         else if (this.unit.equals(Unit.INCH) && that.unit.equals(Unit.FEET))
-            return Double.compare(this.value, that.value*FEET_TO_INCH) == 0;
 
+         comparisionResult = Double.compare(UnitConversion.convertValue(this.unit,this.value), UnitConversion.convertValue(that.unit,that.value)) == 0;
+         return comparisionResult;
       }
-      catch (NullPointerException e){
-         throw new QuantityMeasurementException("Null value found",QuantityMeasurementException.ExceptionType.NULL_OBJECT);
+      catch (NullPointerException e)
+      {
+         throw new QuantityMeasurementException("Null value found", QuantityMeasurementException.ExceptionType.NULL_OBJECT);
       }
-      return false;
-}
+
+   }
 
    @Override
    public boolean equals(Object o)
