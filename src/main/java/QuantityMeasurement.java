@@ -2,9 +2,9 @@
 public class QuantityMeasurement
 {
    private final double value;
-   private final UnitValue unit;
+   private final UnitOfLength unit;
 
-   public QuantityMeasurement(double value, UnitValue unit)
+   public QuantityMeasurement(double value, UnitOfLength unit)
    {
       this.unit = unit;
       this.value = value;

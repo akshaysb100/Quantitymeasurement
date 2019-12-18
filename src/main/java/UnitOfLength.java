@@ -1,12 +1,10 @@
-import jdk.nashorn.internal.runtime.regexp.joni.ast.QuantifierNode;
-
-public enum UnitValue
+public enum UnitOfLength
 {
    INCH(1), FEET(12), YARD(36),CENTI_METER(0.4 );
 
    public final double value;
 
-   UnitValue(double quantifierNode)
+   UnitOfLength(double quantifierNode)
    {
       this.value = quantifierNode;
    }
