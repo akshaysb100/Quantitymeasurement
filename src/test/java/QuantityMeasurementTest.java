@@ -248,7 +248,7 @@ public class QuantityMeasurementTest
    }
 
    @Test
-   public void given1FeetAnd1Feet_WhenCompered_ShouldReturn14Inch()
+   public void given1FeetAnd1Feet_WhenCompered_ShouldReturn24Inch()
    {
       QuantityMeasurement oneFeet1 = new QuantityMeasurement(1.0,UnitValue.FEET);
       QuantityMeasurement oneFeet2 = new QuantityMeasurement(1.0,UnitValue.FEET);
@@ -256,5 +256,23 @@ public class QuantityMeasurementTest
       Assert.assertEquals(24,additionOfInchAndInch,0.0);
    }
 
+   @Test
+   public void given1FeetAnd1Feet_WhenCompered_ShouldReturn14Inch()
+   {
+      QuantityMeasurement oneFeet = new QuantityMeasurement(1.0,UnitValue.FEET);
+      QuantityMeasurement oneInch = new QuantityMeasurement(2.0,UnitValue.INCH);
+      Double additionOfInchAndInch = oneFeet.additionOfTwoUnits(oneInch);
+      Assert.assertEquals(14,additionOfInchAndInch,0.0);
+   }
+
+
+   @Test
+   public void given2InchAnd2p5CentiMeter_WhenCompered_ShouldReturn3Inch()
+   {
+      QuantityMeasurement twoInch = new QuantityMeasurement(2.0,UnitValue.INCH);
+      QuantityMeasurement twoPointFiveCM = new QuantityMeasurement(2.5,UnitValue.CENTI_METER);
+      Double additionOfInchAndInch = twoPointFiveCM.additionOfTwoUnits(twoInch);
+      Assert.assertEquals(3,additionOfInchAndInch,0.0);
+   }
 }
 
