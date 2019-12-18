@@ -162,7 +162,7 @@ public class QuantityMeasurementTest
          QuantityMeasurement inch1 = new QuantityMeasurement(1.0,UnitConversion.Length.INCH);
          QuantityMeasurement yard1 = new QuantityMeasurement(1.0,UnitConversion.Length.YARD_TO_INCH);
          Boolean compareCheck = inch1.compare(yard1);
-         Assert.assertTrue(compareCheck);
+         Assert.assertFalse(compareCheck);
       }
       catch (QuantityMeasurementException e)
       {
@@ -171,7 +171,7 @@ public class QuantityMeasurementTest
    }
 
    @Test
-   public void given36InchAndOneYard_WhenCompered_ShouldReturnFalse()
+   public void given36InchAndOneYard_WhenCompered_ShouldReturnTrue()
    {
       try
       {
@@ -188,7 +188,7 @@ public class QuantityMeasurementTest
 
 
    @Test
-   public void givenOneFeetAndOneYard_WhenCompered_ShouldReturnFalse()
+   public void givenOneFeetAndOneYard_WhenCompered_ShouldReturnTrue()
    {
       try
       {
@@ -204,7 +204,7 @@ public class QuantityMeasurementTest
    }
 
    @Test
-   public void givenOneFeetAnd3Yard_WhenCompered_ShouldReturnFalse()
+   public void givenOneFeetAnd3Yard_WhenCompered_ShouldReturnTrue()
    {
       try
       {
@@ -220,7 +220,7 @@ public class QuantityMeasurementTest
    }
 
    @Test
-   public void given3FeetAndOneYard_WhenCompered_ShouldReturnFalse()
+   public void given3FeetAndOneYard_WhenCompered_ShouldReturnTrue()
    {
       try
       {
@@ -234,6 +234,5 @@ public class QuantityMeasurementTest
          Assert.assertEquals(e.exceptionType, QuantityMeasurementException.ExceptionType.NULL_OBJECT);
       }
    }
-
 }
 
