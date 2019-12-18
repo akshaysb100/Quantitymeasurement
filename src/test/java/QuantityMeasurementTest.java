@@ -221,5 +221,21 @@ public class QuantityMeasurementTest
          Assert.assertEquals(e.exceptionType, QuantityMeasurementException.ExceptionType.NULL_OBJECT);
       }
    }
+
+   @Test
+   public void given2InchAnd5CentiMeter_WhenCompered_ShouldReturnTrue()
+   {
+      try
+      {
+         QuantityMeasurement inch = new QuantityMeasurement(2.0,UnitValue.INCH);
+         QuantityMeasurement centiMeter = new QuantityMeasurement(5.0,UnitValue.CENTI_METER);
+         Boolean compareCheck = inch.compare(centiMeter);
+         Assert.assertTrue(compareCheck);
+      }
+      catch (QuantityMeasurementException e)
+      {
+         Assert.assertEquals(e.exceptionType, QuantityMeasurementException.ExceptionType.NULL_OBJECT);
+      }
+   }
 }
 
