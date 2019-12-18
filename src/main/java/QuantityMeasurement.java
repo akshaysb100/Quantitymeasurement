@@ -2,9 +2,9 @@
 public class QuantityMeasurement
 {
    private final double value;
-   private final UnitConversion.Length unit;
+   private final UnitValue unit;
 
-   public QuantityMeasurement(double value, UnitConversion.Length unit)
+   public QuantityMeasurement(double value, UnitValue unit)
    {
       this.unit = unit;
       this.value = value;
@@ -15,10 +15,9 @@ public class QuantityMeasurement
       boolean comparisionResult = false;
       try
       {
-         Double firstValue = UnitConversion.convertValue(this.unit, this.value);
-         Double secondValue = UnitConversion.convertValue(that.unit, that.value);
-            comparisionResult = Double.compare(firstValue,secondValue ) == 0;
-            return comparisionResult;
+         Double firstValue = this.unit.convertValue()*this.value;
+         Double secondValue = that.unit.convertValue()*that.value;
+         return (Double.compare(firstValue,secondValue)==0);
       }
       catch (NullPointerException e)
       {
