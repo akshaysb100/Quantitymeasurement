@@ -12,7 +12,6 @@ public class QuantityMeasurement
 
    public boolean compare(QuantityMeasurement that) throws QuantityMeasurementException
    {
-      boolean comparisionResult = false;
       try
       {
          Double firstValue = this.unit.convertValue()*this.value;
@@ -24,6 +23,13 @@ public class QuantityMeasurement
          throw new QuantityMeasurementException("Null value found", QuantityMeasurementException.ExceptionType.NULL_OBJECT);
       }
 
+   }
+
+   public Double additionOfTwoUnits(QuantityMeasurement that)
+   {
+      Double firstValue = this.unit.convertValue()*this.value;
+      Double secondValue = that.unit.convertValue()*that.value;
+      return (firstValue+secondValue);
    }
 
    @Override
