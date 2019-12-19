@@ -1,4 +1,4 @@
 public interface Unit
 {
-   public Double convertValue();
+   public Double convertValue(Double valueOfUnit);
 }

@@ -1,19 +1,18 @@
 public enum UnitOfTemperature implements Unit
 {
-   FAHRENHEIT(32.0),CELSIUS(1.0);
+   FAHRENHEIT(32.0), CELSIUS(1.0);
+   private final double valueOfTemperature;
 
-
-   private final double temperature;
-
-   UnitOfTemperature(double temperature)
+   UnitOfTemperature(double valueOfTemperature)
    {
-      this.temperature = temperature;
+      this.valueOfTemperature = valueOfTemperature;
    }
 
    @Override
-   public Double convertValue()
+   public Double convertValue(Double valueOfUnit)
    {
-      return this.temperature;
+      if (this.equals(FAHRENHEIT))
+         return (valueOfUnit - this.valueOfTemperature) * 5 / 9;
+      return this.valueOfTemperature * valueOfUnit;
    }
-
 }

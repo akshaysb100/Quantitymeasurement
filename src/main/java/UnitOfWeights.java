@@ -2,16 +2,16 @@ public enum UnitOfWeights implements Unit
 {
    KILOGRAM(1.0), GRAM(0.001), TONNE(1000.0);
 
-   private final double value;
+   private final double valueWeights;
 
-   UnitOfWeights(double value)
+   UnitOfWeights(double valueWeights)
    {
-      this.value = value;
+      this.valueWeights = valueWeights;
    }
 
    @Override
-   public Double convertValue()
+   public Double convertValue(Double valueOfUnit)
    {
-      return this.value;
+      return this.valueWeights * valueOfUnit;
    }
 }

@@ -1,17 +1,16 @@
 public enum UnitOfLength implements Unit
 {
    INCH(1), FEET(12), YARD(36), CENTI_METER(0.4);
+   public final double valueOfLength;
 
-   public final double value;
-
-   UnitOfLength(double quantifierNode)
+   UnitOfLength(double valueOfLength)
    {
-      this.value = quantifierNode;
+      this.valueOfLength = valueOfLength;
    }
 
    @Override
-   public Double convertValue()
+   public Double convertValue(Double valueOfUnit)
    {
-      return this.value;
+      return this.valueOfLength * valueOfUnit;
    }
 }
