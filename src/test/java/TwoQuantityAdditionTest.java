@@ -57,4 +57,14 @@ public class TwoQuantityAdditionTest
         Double additionOfInchAndInch = twoPointFiveCM.additionOfTwoUnits(twoInch);
         Assert.assertEquals(2.0, additionOfInchAndInch, 0.1);
     }
+
+
+   @Test
+   public void givenOneTonneAnd1000Gram_WhenAdd_ShouldReturn1001Kilogram()
+   {
+      QuantityMeasurement tone = new QuantityMeasurement(1.0, UnitOfWeights.TONNE);
+      QuantityMeasurement kiloGram = new QuantityMeasurement(1000.0, UnitOfWeights.GRAM);
+      Double additionOfInchAndInch = tone.additionOfTwoUnits(kiloGram);
+      Assert.assertEquals(1001.0, additionOfInchAndInch, 0.0);
+   }
 }
