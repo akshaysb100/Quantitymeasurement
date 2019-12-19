@@ -10,9 +10,10 @@ public class QuantityMeasurement
       this.unit = unit;
    }
 
-   public boolean compare(QuantityMeasurement that)
+   public boolean compare(QuantityMeasurement that) throws QuantityMeasurementException
    {
-
+      if(!this.unit.getClass().equals(that.unit.getClass()))
+         throw new QuantityMeasurementException("why this kolaveri",QuantityMeasurementException.ExceptionType.UNIT_NOT_COMPARABLE);
       Double firstValue = this.unit.convertValue() * this.value;
       Double secondValue = that.unit.convertValue() * that.value;
       return (Double.compare(firstValue, secondValue) == 0);
