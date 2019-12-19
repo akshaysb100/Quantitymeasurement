@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="QuantityComparisionTest" tests="1" skipped="1" failures="0" errors="0" timestamp="2019-12-18T18:09:25" hostname="DESKTOP-DJCR3QP" time="105.422">
+  <properties/>
+  <testcase name="givenOneFeet_WhenCompered_ShouldReturnFalse" classname="QuantityComparisionTest" time="105.422">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

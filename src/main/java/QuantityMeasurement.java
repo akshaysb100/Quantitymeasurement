@@ -1,44 +1,32 @@
 
-public class QuantityMeasurement
-{
-   private final double value;
-   private final UnitOfLength unit;
+public class QuantityMeasurement {
+    private double value;
+    private final Unit unit;
 
-   public QuantityMeasurement(double value, UnitOfLength unit)
-   {
-      this.unit = unit;
-      this.value = value;
-   }
+    public QuantityMeasurement(double value, Unit unit) {
+        this.value = value;
+        this.unit = unit;
+    }
 
-   public boolean compare(QuantityMeasurement that) throws QuantityMeasurementException
-   {
-      try
-      {
-         Double firstValue = this.unit.convertValue()*this.value;
-         Double secondValue = that.unit.convertValue()*that.value;
-         return (Double.compare(firstValue,secondValue)==0);
-      }
-      catch (NullPointerException e)
-      {
-         throw new QuantityMeasurementException("Null value found", QuantityMeasurementException.ExceptionType.NULL_OBJECT);
-      }
+    public boolean compare(QuantityMeasurement that) {
 
-   }
+        Double firstValue = this.unit.convertValue() * this.value;
+        Double secondValue = that.unit.convertValue() * that.value;
+        return (Double.compare(firstValue, secondValue) == 0);
+    }
 
-   public Double additionOfTwoUnits(QuantityMeasurement that)
-   {
-      Double firstValue = this.unit.convertValue()*this.value;
-      Double secondValue = that.unit.convertValue()*that.value;
-      return (firstValue+secondValue);
-   }
+    public Double additionOfTwoUnits(QuantityMeasurement that) {
+        Double firstValue = this.unit.convertValue() * this.value;
+        Double secondValue = that.unit.convertValue() * that.value;
+        return (firstValue + secondValue);
+    }
 
-   @Override
-   public boolean equals(Object o)
-   {
-      if (this == o) return true;
-      if (o == null || getClass() != o.getClass()) return false;
-      QuantityMeasurement quantityMeasurement = (QuantityMeasurement) o;
-      return Double.compare(quantityMeasurement.value, value) == 0 &&
-            unit == quantityMeasurement.unit;
-   }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        QuantityMeasurement quantityMeasurement = (QuantityMeasurement) o;
+        return Double.compare(quantityMeasurement.value, value) == 0 &&
+                unit == quantityMeasurement.unit;
+    }
 }
