@@ -170,5 +170,14 @@ public class QuantityComparisionTest
       Boolean compareCheck = litre.compare(milliLitre);
       Assert.assertTrue(compareCheck);
    }
+
+    @Test
+    public void givenOneKgAnd1000Grams_WhenCompered_ShouldReturnTrue()
+    {
+        QuantityMeasurement litre = new QuantityMeasurement(1.0, UnitOfWeights.KILOGRAM);
+        QuantityMeasurement milliLitre = new QuantityMeasurement(1000.0, UnitOfWeights.GRAM);
+        Boolean compareCheck = litre.compare(milliLitre);
+        Assert.assertTrue(compareCheck);
+    }
 }
 
