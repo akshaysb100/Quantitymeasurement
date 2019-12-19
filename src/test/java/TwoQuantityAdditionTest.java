@@ -41,12 +41,4 @@ public class TwoQuantityAdditionTest {
         Double additionOfInchAndInch = twoPointFiveCM.additionOfTwoUnits(twoInch);
         Assert.assertEquals(3, additionOfInchAndInch, 0.0);
     }
-
-    @Test
-    public void gien2InchAnd2p5CentiMeter_WhenCompered_ShouldReturn3Inch() {
-        QuantityMeasurement twoInch = new QuantityMeasurement(1.0, UnitOfVolume.GALLON);
-        QuantityMeasurement twoPointFiveCM = new QuantityMeasurement(3.78, UnitOfVolume.LITER);
-        Double additionOfInchAndInch = twoPointFiveCM.additionOfTwoUnits(twoInch);
-        Assert.assertEquals(3, additionOfInchAndInch, 0.0);
-    }
 }

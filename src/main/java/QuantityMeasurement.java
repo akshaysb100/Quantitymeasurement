@@ -1,9 +1,10 @@
+import com.sun.tools.javac.util.Assert;
 
 public class QuantityMeasurement {
-    private double value;
+    private Double value;
     private final Unit unit;
 
-    public QuantityMeasurement(double value, Unit unit) {
+    public QuantityMeasurement(Double value, Unit unit) {
         this.value = value;
         this.unit = unit;
     }
@@ -12,6 +13,7 @@ public class QuantityMeasurement {
 
         Double firstValue = this.unit.convertValue() * this.value;
         Double secondValue = that.unit.convertValue() * that.value;
+
         return (Double.compare(firstValue, secondValue) == 0);
     }
 

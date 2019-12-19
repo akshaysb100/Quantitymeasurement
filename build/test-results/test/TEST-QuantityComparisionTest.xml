@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="QuantityComparisionTest" tests="1" skipped="1" failures="0" errors="0" timestamp="2019-12-18T18:09:25" hostname="DESKTOP-DJCR3QP" time="105.422">
+<testsuite name="QuantityComparisionTest" tests="18" skipped="0" failures="0" errors="0" timestamp="2019-12-19T04:35:44" hostname="admin1-desktop" time="0.021">
   <properties/>
-  <testcase name="givenOneFeet_WhenCompered_ShouldReturnFalse" classname="QuantityComparisionTest" time="105.422">
-    <skipped/>
-  </testcase>
+  <testcase name="givenOneFeetAndOneFeet_WhenCompered_ShouldReturnEqualLength" classname="QuantityComparisionTest" time="0.003"/>
+  <testcase name="givenZeroInchAndAnotherOneInch_ShouldReturnNotEqual" classname="QuantityComparisionTest" time="0.0"/>
+  <testcase name="givenOneFeetAndAnotherFeet_ShouldReturnNotEqual" classname="QuantityComparisionTest" time="0.0"/>
+  <testcase name="givenOneInchAndOneFeet_WhenCompered_ShouldReturnNotEqualLength" classname="QuantityComparisionTest" time="0.0"/>
+  <testcase name="givenOneInchAndOneInch_WhenCompered_ShouldReturnEqualLength" classname="QuantityComparisionTest" time="0.0"/>
+  <testcase name="forOneFeetAndAnotherOneFeet_ShouldReturnEqual" classname="QuantityComparisionTest" time="0.001"/>
+  <testcase name="givenOneInchAndOneYard_WhenCompered_ShouldReturnFalse" classname="QuantityComparisionTest" time="0.0"/>
+  <testcase name="comparingZeroInchAndZeroFeet_ShouldReturnEqualLength" classname="QuantityComparisionTest" time="0.0"/>
+  <testcase name="givenOneFeetAndOneInch_ShouldReturnNotEqual" classname="QuantityComparisionTest" time="0.0"/>
+  <testcase name="givenOneYardAndOneYard_WhenCompered_ShouldReturnFalse" classname="QuantityComparisionTest" time="0.0"/>
+  <testcase name="comparingZeroInchAnd1Feet_ShouldReturnNotEqualLength" classname="QuantityComparisionTest" time="0.0"/>
+  <testcase name="givenOneGallonAnd3p78Litre_WhenCompered_ShouldReturnTrue" classname="QuantityComparisionTest" time="0.0"/>
+  <testcase name="givenOneInchAndAnotherOneInch_ShouldReturnEqual" classname="QuantityComparisionTest" time="0.0"/>
+  <testcase name="givenOneFeetAnd3Yard_WhenCompered_ShouldReturnFalse" classname="QuantityComparisionTest" time="0.0"/>
+  <testcase name="given3FeetAndOneYard_WhenCompered_ShouldReturnTrue" classname="QuantityComparisionTest" time="0.001"/>
+  <testcase name="givenOneLitreAnd1000MilliLitre_WhenCompered_ShouldReturnTrue" classname="QuantityComparisionTest" time="0.001"/>
+  <testcase name="given36InchAndOneYard_WhenCompered_ShouldReturnTrue" classname="QuantityComparisionTest" time="0.001"/>
+  <testcase name="givenOneInchAndOneInch_WhenCompered_ShouldReturnFalse" classname="QuantityComparisionTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -128,10 +128,17 @@ public class QuantityComparisionTest {
     }
 
     @Test
-    public void givenOneFeet_WhenCompered_ShouldReturnFalse() {
-        QuantityMeasurement feet1 = new QuantityMeasurement(1.0, UnitOfVolume.GALLON);
-        QuantityMeasurement yard1 = new QuantityMeasurement(3.78, UnitOfVolume.LITER);
-        Boolean compareCheck = feet1.compare(yard1);
+    public void givenOneGallonAnd3p78Litre_WhenCompered_ShouldReturnTrue() {
+        QuantityMeasurement gallon = new QuantityMeasurement(1.0, UnitOfVolume.GALLON);
+        QuantityMeasurement litre = new QuantityMeasurement(3.78, UnitOfVolume.LITRE);
+        Boolean compareCheck = gallon.compare(litre);
+        Assert.assertTrue(compareCheck);
+    }
+    @Test
+    public void givenOneLitreAnd1000MilliLitre_WhenCompered_ShouldReturnTrue() {
+        QuantityMeasurement litre = new QuantityMeasurement(1.0, UnitOfVolume.LITRE);
+        QuantityMeasurement milliLitre = new QuantityMeasurement(1000.0, UnitOfVolume.MILLI_LITRE);
+        Boolean compareCheck = litre.compare(milliLitre);
         Assert.assertTrue(compareCheck);
     }
 }

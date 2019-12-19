@@ -1,15 +1,16 @@
 public enum UnitOfVolume implements Unit {
 
-    GALLON(1.0),LITER( 0.2645502646);
+    GALLON(3.78), LITRE( 1.0),MILLI_LITRE(0.001);
 
-    public final Double value;
+    public final double value;
 
-    UnitOfVolume(Double value) {
+    UnitOfVolume(double value) {
             this.value=value;
     }
 
     @Override
-    public Double convertValue() {
+    public Double convertValue()
+    {
         return this.value;
     }
 }
