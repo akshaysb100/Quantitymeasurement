@@ -48,4 +48,13 @@ public class TwoQuantityAdditionTest
       Double additionOfInchAndInch = twoPointFiveCM.additionOfTwoUnits(twoInch);
       Assert.assertEquals(7.57, additionOfInchAndInch, 0.1);
    }
+
+    @Test
+    public void givenOneThousandMilliLitreAndOneLitre_WhenAdd_ShouldReturn2Litre()
+    {
+        QuantityMeasurement twoInch = new QuantityMeasurement(1000.0, UnitOfVolume.MILLI_LITRE);
+        QuantityMeasurement twoPointFiveCM = new QuantityMeasurement(1.0, UnitOfVolume.LITRE);
+        Double additionOfInchAndInch = twoPointFiveCM.additionOfTwoUnits(twoInch);
+        Assert.assertEquals(2.0, additionOfInchAndInch, 0.1);
+    }
 }
