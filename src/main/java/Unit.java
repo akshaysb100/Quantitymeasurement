@@ -1,3 +1,4 @@
-public interface Unit {
-    public Double convertValue();
+public interface Unit
+{
+   public Double convertValue();
 }

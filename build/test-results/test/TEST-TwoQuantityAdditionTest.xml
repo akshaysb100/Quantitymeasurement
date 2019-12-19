@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TwoQuantityAdditionTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-12-19T04:41:54" hostname="admin1-desktop" time="0.002">
+  <properties/>
+  <testcase name="givenOneGallonAnd3p78Litre_WhenAdd_ShouldReturn7p57Litre" classname="TwoQuantityAdditionTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
