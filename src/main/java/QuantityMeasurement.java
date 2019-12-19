@@ -15,7 +15,6 @@ public class QuantityMeasurement
 
       Double firstValue = this.unit.convertValue() * this.value;
       Double secondValue = that.unit.convertValue() * that.value;
-
       return (Double.compare(firstValue, secondValue) == 0);
    }
 
